@@ -1,0 +1,39 @@
+{
+    "xsappname": "authrouter",
+    "tenant-mode": "dedicated",
+    "description": "Security profile of called application",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.viewer",
+            "description": "viewer"
+        },
+        {
+            "name": "$XSAPPNAME.admin",
+            "description": "admin"
+        }
+    ],
+    "attributes": [],
+    "role-templates": [
+        {
+            "name": "viewer",
+            "description": "generated",
+            "scope-references": [
+                "$XSAPPNAME.viewer"
+            ],
+            "attribute-references": []
+        },
+        {
+            "name": "admin",
+            "description": "generated",
+            "scope-references": [
+                "$XSAPPNAME.admin"
+            ],
+            "attribute-references": []
+        }
+    ],
+    "oauth2-configuration": {
+        "redirect-uris": [
+            "https://a8b5f839trial-dev-authrouter-approuter.cfapps.us10.hana.ondemand.com/login/callback"
+        ]
+    }
+}
